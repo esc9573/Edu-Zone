@@ -1,0 +1,281 @@
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+#togglesidebar {
+    position: fixed;
+    top: 8px;
+    left: 10px;
+    background-color: transparent;
+    color: #000000;
+    border: none;
+    padding: 19px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.header {
+    background: linear-gradient(to right, #0559cf, #2a5298);
+    color: white;
+    text-align: center;
+    padding: 1px;
+    font-size: 10px;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.container {
+    margin-top: 80px;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    margin-top: 80px
+}
+
+.sidebar {
+    width: 180px;
+    background: #e8e8e8;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    overflow-y: auto;
+    transition: all 0.3s, padding 0.3s;
+}
+
+.sidebar.closed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul li a:hover {
+    color: #0559CF;
+    transition: 0.3s;
+}
+
+.content {
+    margin-left: 25vh;
+    padding: 20px;
+    flex-grow: 1;
+    transition: all 0.3s;
+    max-width: 800vh;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    align-items: center;
+}
+
+.content h1,
+content h2 {
+    text-align: center;
+}
+
+.content section {
+    padding: 20px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.content h2 {
+    color: #2c3e50;
+    text-align: center;
+}
+
+p {
+    padding: 1px;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+br {
+    padding: 3px;
+}
+
+header h1 a {
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+.span1 {
+    color: #ccc;
+    background-color: #1e1e1e;
+    background: #1e1e1e;
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead {
+    background: #2c3e50;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+code {
+    background: #eef;
+    padding: 3px 6px;
+    border-radius: 5px;
+    font-family: "Courier New", monospace;
+}
+
+tbody tr:hover {
+    background: #ddd;
+}
+
+.content.shifted {
+    margin-left: 20px;
+}
+
+.btnquiz {
+    padding: 15px 30px;
+    background-color: #0559cf;
+    text-align: center;
+    justify-content: center;
+    font-size: 18px;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.btnquiz button {
+    background-color: #0559cf;
+    color: #feffff;
+    width: 100%;
+    font-size: 18px;
+    height: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+
+/* Navbar */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #fff;
+    z-index: 200;
+    height: 10vh;
+}
+
+.navbar {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+nav .nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+}
+
+nav .nav-links a {
+    font-size: 18px;
+    margin-left: 20px;
+    position: relative;
+}
+
+nav .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background-color: #0B81CA;
+    transition: all 0.5s ease;
+}
+
+nav .nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+nav .nav-links a:hover {
+    color: #0559CF;
+}
+
+nav .nav-links a:nth-child(2) {
+    color: #0559CF;
+}
+
+nav .nav-links:hover a:nth-child(2) {
+    color: #000;
+}
+
+@media screen and (max-width: 600px) {
+    nav .nav-links {
+        margin-left: 0px;
+    }
+    nav .nav-links a {
+        font-size: 14px;
+    }
+}

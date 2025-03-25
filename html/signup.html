@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/signupcss.css">
+    <title>EduZone-SignUp</title>
+</head>
+
+<body>
+
+    <div class="signup">
+        <div class="left">
+            <h1>Sign Up</h1>
+            <p>Let's Start wonderful journey with learn content</p>
+            <input type="text" placeholder="Full name" required>
+            <input type="email" placeholder="Email" required>
+            <div class="password">
+                <input type="password" id="password" required placeholder="Password">
+                <i class="icon-password fa-solid fa-eye" onclick="togglePassword()"></i>
+            </div>
+            <div class="password">
+                <input type="password" id="password2" required placeholder="Confirm Password">
+                <i class="icon-password fa-solid fa-eye" onclick="togglePassword()"></i>
+            </div>
+            <div class="chek">
+                <p><i class="fa-solid fa-circle-check"></i> Least 8 characters</p>
+                <p><i class="fa-solid fa-circle-check"></i> Least a number (0-9) or a symbol</p>
+                <p><i class="fa-solid fa-circle-check"></i> Lowercase (a-z) and uppercase (A-Z)</p>
+            </div>
+            <div class="google">
+                <input type="submit" value="Login" onclick="window.location.href='./Login.html'" href="./Login.html">
+                <h5>Or</h5>
+                <a href="#"><i class="fa-brands fa-google"></i></a>
+            </div>
+            <h4> i not have an account?<a href="./Login.html">Login</a></h4>
+        </div>
+        <div class="right">
+            <img src="../img/signup.png  " style="transform: scaleX(-1);">
+        </div>
+    </div>
+
+
+
+    <script src="../js/signup.js"></script>
+</body>
+
+</html>

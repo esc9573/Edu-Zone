@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Succinctly</title>
+    <link rel="stylesheet" href="../css/course content css.css">
+</head>
+
+<body>
+    <button id="togglesidebar">≡</button>
+    <!-- الهيدر يحتوي على اسم الموقع) -->
+    <header class="header">
+        <nav id="navbar">
+
+            <div class="nav-links">
+                <a href="./home2.html" class="nav-btn1">Home</a>
+                <a href="./course essential.html" class="nav-btn2">Courses</a>
+                <a href="./quiz.html" class="nav-btn3">Quizzes</a>
+                <a href="./support.html" class="nav-btn4">Support</a>
+            </div>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <!-- القائمة الجانبية -->
+        <div class="sidebar">
+            <h2>Chapters</h2>
+            <ul>
+                <li><a onclick="togglemenu('chapter1-menu')">1.Introduction</a></li>
+                <ul class="sup" id="chapter1-menu">
+                    <li><a href="#sub1">1.1 What is C++</a></li>
+                    <li><a href="#sub2">1.2 Fundamental Types</a></li>
+                    <li><a href="#sub3">1.3 Enumerations</a></li>
+                    <li><a href="#sub4">1.4 typedef</a></li>
+                    <li><a href="#sub5">1.5 Key Takeaways</a></li>
+                </ul>
+                <li><a onclick="togglemenu('chapter2-menu')">2.Basics</a></li>
+                <ul class="sup" id="chapter2-menu">
+                    <li><a href="#subb1">2.1 Basic Structure of a C++ Program</a></li>
+                    <li><a href="#subb2">2.2 Variables and Data Types in C++</a></li>
+                    <li><a href="#subb3">2.3 Operators in C++</a></li>
+                    <li><a href="#subb4">2.4 Conditional Statements in C++</a></li>
+                    <li><a href="#subb5">1.5 Key Takeaways</a></li>
+                </ul>
+                <li><a onclick="togglemenu('chapter3-menu')">3. Functions</a></li>
+
+                <ul class="sup" id="chapter3-menu">
+                    <li><a href="#subbb1">3.1 Functions</a></li>
+                    <li><a href="#subbb2">3.2 Function Parameters</a></li>
+                    <li><a href="#subbb3">3.3 FUNCTION CALLS</a></li>
+                    <li><a href="#subbb4">3.4 Functions calls</a></li>
+                    <li><a href="#subbb5">3.5 type for function</a></li>
+                    <li><a href="#subbb6">3.6Types of Functions in C++</a></li>
+                    <li><a href="#subbb7">3.7 Function With Return Value (Returns Output)</a></li>
+                    <li><a href="#subbb8">3.8 Function With Default Parameters</a></li>
+                    <li><a href="#subbb9">3.9  Function Overloading (Same Name, Different Parameters)</a></li>
+                    <li><a href="#subbb10">3.9.1 Pass By Value vs By Reference</a></li>
+                    <li><a href="#subbb11">3.9.2 Pass By Value vs By Reference</a></li>
+
+                </ul>
+
+                <li><a href="#chapter4">4. Classes</a></li>
+
+            </ul>
+        </div>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="content">
+            <h1>C++ Succinctly</h1>
+
+            <section id="chapter1">
+                <h2>1. Introduction</h2>
+                <iframe src="https://www.youtube.com/embed/KtCBGz9xcgI?si=Xnl8aW7xOFaGCM4V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+                <p id="sub1"><strong>1.1 What is C++?</strong></p>
+                <p>C++ Succinctly was written to help professional C# developers learn modern C++ programming.</p>
+                <p> The aim of this book is to leverage your existing C# knowledge in order to expand your skills. <br> Whether you need to use C++ in an upcoming project, or simply want to learn a new language (or reacquaint yourself with it), <br> this
+                    book will help you learn all of the fundamental pieces of C++ so you can understand projects and samples written in C++ and begin writing your own C++ programs. As with any large subject, <br>there simply wasn’t room to cover everything
+                    (an example being the new atomic features added in C++11), <br> and others might have decided to order the topics differently. <br> I’m thinking particularly of pointers, a topic I cover in depth only further into the book. They are
+                    important, so some might have chosen to cover them earlier,
+                    <br>I hope I have succeeded. I consulted the C++11 language specification frequently while writing this, and I also read everything from StackOverflow posts, to MSDN docs, to GCC docs, and beyond. <br> There are areas where I intentionally
+                    simplified things. <br> As you continue to expand your knowledge of C++, you will undoubtedly reach issues where you need to have a more comprehensive understanding in order to accomplish your goal or eliminate a bug. <br> If reading
+                    this book imparts enough knowledge—and a good-enough feel for the language that you are able to recognize, diagnose, and resolve those issues—then I will be content that I have succeeded in my goals. Welcome to C++! </p>
+
+                <p id="sub2"><strong>1.2 Fundamental Types</strong></p>
+                <p>The smallest fundamental unit in C++ is char, which only needs to be at least large enough to hold the 96 basic characters that the C++ standard specifies, plus any other characters in the implementation’s basic character set. In theory,
+                    some implementation of C++ could define a char as 7 bits or 16 bits … almost anything is possible.
+                    <P>But in practice you don’t need to worry too much about a char being anything other than 8 bits (the equivalent of the byte or sbyte type in C#), which is its size in Visual C++. In C++, char, signed char, and unsigned char are three
+                        distinct types.</P> All three are required to take up the same amount of storage in memory. So a char in practice is either signed or unsigned. Whether it is signed or unsigned is implementation defined (see the sidebar). In Visual
+                    C++ the char type is, by default, signed. But you can use a compiler switch to have it treated as unsigned instead. In GCC, whether it is signed or unsigned depends on which CPU architecture you are targeting. The signed integer types,
+                    in size order from smallest to largest, are:<span style="color: red;"><br> 1. signed char <br>2. short int <br>3. int <br>4. long int <br>5. long long int <br> </span>.The only guarantee of the size of each of these integer types is
+                    that each one is at least as large as the next smallest integer type.
+                    <p> In Visual C++, an int and a long int are both 32-bit integers. It is only the long long int that is a 64-bit integer.If you need to ensure that you are using specific sizes, you can include the C++ Standard Library header file cstdint
+                        (e.g., #include
+                        <cstdint> ), which defines, among other things, the <br>types:<span style="color: red;">
+                        <br> int8_t <br> int16_t
+                        <br> int32_t
+                        <br> int64_t
+                        <br> uint8_t
+                        <br> uint16_t
+                        <br> uint32_t
+                        <br> uint64_t <br></span>These types have their use, but you will find that most APIs do not use them; instead, they use the fundamental types directly. This can make your programming confusing, as you constantly need to check
+                            the underlying fundamental type to ensure you do not end up with unintended truncation or expansion.</p>
+                </p>
+
+                <p id="sub3"><strong>1.3 Enumerations</strong></p>
+                <p>Enumerations are fairly similar to each other in C++ and C#. C++ has two types of enums: scoped and un-scoped. A scoped enumeration is defined as either an enum class or an enum struct. There is no difference between the two. An un-scoped
+                    enumeration is defined as a plain enum. Let’s look at a sample:<br><span class="span1"><br>#include <iostream> 
+                        <br> #include <ostream> 
+                            <br> #include <string> 
+                                <br> #include "../pchar.h" 
+                               <br> enum class Color 
+                               <br>  { 
+                                             <br>            Red, 
+                                 <br>            Orange, 
+                                 <br>            Yellow, 
+                                 <br>            Blue, 
+                                 <br>            Indigo, 
+                                 <br>           Violet 
+                                 <br>     }; 
+                                 
+                                <br> // You can specify any underlying integral type you want, provided it fits. 
+                                <br>          enum Flavor : unsigned short int 
+                                <br> { 
+                                    <br>         Vanilla, 
+                                    <br>         Chocolate, 
+                                 <br>         Strawberry, 
+                                 <br>         Mint, 
+                                }; 
+                                 
+                                <br>int _pmain(int /*argc*/, _pchar* /*argv*/[]) 
+                                <br>  { 
+                                    <br>        Flavor f = Vanilla; 
+                                 <br>       f = Mint; // This is legal since the Flavor enum is an un-scoped enum. 
+                                 
+                                 <br>         Color c = Color::Orange; 
+                                 //c = Orange; // This is illegal since the Color enum is a scoped enum. 
+                                 <br>         
+                                 std::wstring flavor; 
+                                 <br>        std::wstring color; 
+                                 
+                                 <br>  switch (c) 
+                                 <br>  { 
+                                    <br> case Color::Red: 
+                                    <br>   color = L"Red"; 
+                                    <br>   break; 
+                                    <br>  case Color::Orange: 
+                                    <br>   color = L"Orange"; 
+                                    <br>    break; 
+                                    <br>       case Color::Yellow: 
+                                 <br>    color = L"Yellow"; 
+                                 <br>   break; 
+                                 <br>   color = L"Blue"; 
+                                 <br>       break; 
+                                  <br>  case Color::Indigo: 
+                                  <br>        color = L"Indigo"; 
+                                  <br>    break; 
+                                  <br>    case Color::Violet: 
+                                  <br>     color = L"Violet"; 
+                                  <br>      break; 
+                                  <br>      default: 
+                                  <br>       color = L"Unknown"; 
+                                  <br>     break; 
+                                  <br>   } 
+                               <br>   switch (f) 
+                               <br>  { 
+                                <br>  case Vanilla: 
+                                <br>   flavor = L"Vanilla"; 
+                                <br>   break; 
+                                <br>   case Chocolate: 
+                                <br>    flavor = L"Chocolate"; 
+                                   <br>     break; 
+                                   <br>    case Strawberry: 
+                                   <br>    flavor = L"Strawberry"; 
+                                   <br>    break; 
+                                   <br>    case Mint: 
+                                   <br>     flavor = L"Mint"; 
+                                   <br>     break; 
+                                   <br>     default: 
+                                   <br>      break; 
+                                   <br>     } 
+                                  
+                                   <br>      std::wcout << L"Flavor is " << flavor.c_str() << L" (" << f << 
+                                   <br>      L"). Color is " << color.c_str() << L" (" << 
+                                        static_cast<int>(c) << L")." << std::endl << 
+                                          L"The size of Flavor is " << sizeof(Flavor) << 
+                                    <br>      L"." << std::endl << 
+                                    <br>      L"The size of Color is " << sizeof(Color) << 
+                                    <br>      L"." << std::endl; 
+                                  
+                                    <br>     return 0; 
+                                 } </span></p>
+                <p id="sub4"><strong>1.4 typedef </strong></p>
+                <p> What is typedef?<br>The typedef keyword in C++ is used to create an alias (alternative name) for an existing data type.<br> It helps improve code readability and makes complex type definitions more manageable.
+                    <br> Basic Syntax of typedef <br>
+                    <span class="span1">
+                    typedef existing_type new_name;
+                   </span>
+                    <br>existing_type: The original data type.
+                    <br> new_name: The alias (alternative name) for that data type.
+                    <br> Example 1 - Using typedef for Simple Data Types<br> Creating an Alias for unsigned int <br>
+                    <span class="span1">#include <iostream>
+                        using namespace std;<br>
+                        
+                         <br>typedef unsigned int uint; // Alias for unsigned int
+                        
+                        <br>int main() {
+                           <br> uint age = 25;  // Now we can use 'uint' instead of 'unsigned int'
+                           <br> cout << "Age: " << age << endl;
+                           <br> return 0;
+                        }
+                        </span>
+                    <br> Example 2 - Using typedef for Structs<br> In C++, structures (struct) require the struct keyword when declaring variables. typedef simplifies this.
+                    <br> <span class="span1">#include <iostream><br>
+                        <br>     using namespace std;
+                        
+                        <br>     typedef struct {
+                            <br>       string name;
+                            <br>        int age;
+                            <br>     } Person;  // 'Person' is now an alias for this struct
+                        
+                            <br>      int main() {
+                                <br>           Person p1; // No need to write 'struct' before declaration
+                                <br>            p1.name = "John";
+                                <br>            p1.age = 30;
+                        
+                                <br>                cout << "Name: " << p1.name << ", Age: " << p1.age << endl;
+                                <br>                return 0;
+                                <br>              }
+                        </span>
+                </p>
+                <p id="sub5"><strong>1.5 Key Takeaways</strong></p>
+
+                <p>
+                    The `typedef` keyword in C++ is used to create aliases for existing data types. It helps simplify complex type definitions and improves readability. The following table summarizes different uses of `typedef` in C++:
+                </p>
+
+                <p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Definition</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Basic Type Alias</td>
+                                <td>Create a new name for an existing type.</td>
+                                <td><code>typedef unsigned int uint;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Struct Alias</td>
+                                <td>Simplifies struct declarations.</td>
+                                <td><code>typedef struct { string name; int age; } Person;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Function Pointer</td>
+                                <td>Gives a name to function pointers.</td>
+                                <td><code>typedef void (*FuncPtr)(int);</code></td>
+                            </tr>
+                            <tr>
+                                <td>Array Type</td>
+                                <td>Creates an alias for array types.</td>
+                                <td><code>typedef int Marks[5];</code></td>
+                            </tr>
+                            <tr>
+                                <td>Template Support</td>
+                                <td>Used inside templates.</td>
+                                <td><code>typedef T value_type;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Modern Alternative</td>
+                                <td>`using` (C++11 and later) is preferred.</td>
+                                <td><code>using uint = unsigned int;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </p>
+
+                <p>
+                    In modern C++, the `using` keyword is preferred over `typedef` because it provides better readability and supports templates. However, `typedef` is still useful in legacy code.
+                </p>
+
+            </section>
+            <div class="btnquiz">
+                <button onclick="window.location.href='./quiz.html'">Quiz</button>
+
+            </div>
+            <!--شابتر اتنين-->
+            <section id="chapter2">
+                <h2>2. Basic </h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/pGWsxn1_oDw?si=tbXSirXdwmHwkKHe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p id="subb1"><strong>2.1 Basic Structure of a C++ Program</strong></p>
+                <p>very C++ program consists of the following components:
+                    <br> Preprocessor Directives (#include
+                    <iostream>) → To include standard libraries.
+                        <br> Main Function (main()) → The starting point of the program.
+                        <br>Statements (cout
+                        << "Hello, World!";) → Instructions executed by the compiler. <br> Return Statement (return 0;) → Ends the program.<br>
+                            <br> Example: Writing a Basic C++ Program <br><span class="span1">
+                            <br> #include
+                            <iostream> // Include the input-output stream library
+                                <br> using namespace std; // Allows using standard namespace (optional but useful)
+
+                                <br> int main() {
+                                <br> cout
+                                << "Hello, World!"; // Print to the console <br> return 0; // Indicate that the program executed successfully
+                                    <br> }</span>
+                            <br> Explanation:
+                            <br>#include
+                            <iostream> → Includes the iostream library for input and output.
+                                <br>using namespace std; → Allows direct use of standard functions like cout.
+                                <br>int main() → The main function where execution begins.
+                                <br>cout
+                                << "Hello, World!"; → Outputs text to the screen. <br>return 0; → Indicates the program ended successfully.
+
+                </p>
+                <p id="subb2"><strong>2.2 Variables and Data Types in C++</strong></p>
+                <p>
+                    Variables are containers for storing data. C++ provides several data types to store different kinds of values.<br> Common Data Types in C++<br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data Type</th>
+                                <th>Size</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>int</code></td>
+                                <td>4 bytes</td>
+                                <td><code>int age = 25;</code></td>
+                                <td>Stores **whole numbers** (e.g., 10, -5)</td>
+                            </tr>
+                            <tr>
+                                <td><code>float</code></td>
+                                <td>4 bytes</td>
+                                <td><code>float price = 19.99;</code></td>
+                                <td>Stores **decimal numbers** with single precision</td>
+                            </tr>
+                            <tr>
+                                <td><code>double</code></td>
+                                <td>8 bytes</td>
+                                <td><code>double pi = 3.14159;</code></td>
+                                <td>Stores **high-precision floating-point numbers**</td>
+                            </tr>
+                            <tr>
+                                <td><code>char</code></td>
+                                <td>1 byte</td>
+                                <td><code>char grade = 'A';</code></td>
+                                <td>Stores **single characters** (e.g., 'A', '9')</td>
+                            </tr>
+                            <tr>
+                                <td><code>bool</code></td>
+                                <td>1 byte</td>
+                                <td><code>bool isStudent = true;</code></td>
+                                <td>Stores **true/false values**</td>
+                            </tr>
+                            <tr>
+                                <td><code>string</code></td>
+                                <td>Varies</td>
+                                <td><code>string name = "John";</code></td>
+                                <td>Stores **text strings** (requires <code>#include &lt;string&gt;</code>)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br> Understanding these **data types** is crucial for efficient memory management and correct program execution in C++.<br>
+                    <span class="span1"><br> #include <iostream>
+                        <br>   using namespace std;
+                        
+                        <br>    int main() {
+                            <br>      int age = 25;       // عدد صحيح
+                            <br>      double height = 5.9; // عدد عشري
+                            <br>      char grade = 'A';    // رمز واحد
+                            <br>      bool isPassed = true; // قيمة منطقية
+                        
+                            <br>      cout << "Age: " << age << endl;
+                            <br>      cout << "Height: " << height << endl;
+                            <br>       cout << "Grade: " << grade << endl;
+                            <br>       cout << "Passed: " << isPassed << endl;
+                        
+                            <br>         return 0;
+                            <br>      }
+                        </span>
+
+
+
+                </p>
+
+                <p id="subb3"><strong>2.3 Operators in C++s</strong></p>
+                <p>C++ includes arithmetic, comparison, and logical operators for performing operations on variables.<br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operator</th>
+                                <th>Example</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>+</code></td>
+                                <td><code>x + y</code></td>
+                                <td>Addition</td>
+                            </tr>
+                            <tr>
+                                <td><code>-</code></td>
+                                <td><code>x - y</code></td>
+                                <td>Subtraction</td>
+                            </tr>
+                            <tr>
+                                <td><code>*</code></td>
+                                <td><code>x * y</code></td>
+                                <td>Multiplication</td>
+                            </tr>
+                            <tr>
+                                <td><code>/</code></td>
+                                <td><code>x / y</code></td>
+                                <td>Division</td>
+                            </tr>
+                            <tr>
+                                <td><code>%</code></td>
+                                <td><code>x % y</code></td>
+                                <td>Modulus (Remainder)</td>
+                            </tr>
+                            <tr>
+                                <td><code>==</code></td>
+                                <td><code>x == y</code></td>
+                                <td>Equal to</td>
+                            </tr>
+                            <tr>
+                                <td><code>!=</code></td>
+                                <td><code>x != y</code></td>
+                                <td>Not equal to</td>
+                            </tr>
+                            <tr>
+                                <td><code>&&</code></td>
+                                <td><code>x && y</code></td>
+                                <td>Logical AND</td>
+                            </tr>
+                            <tr>
+                                <td><code>||</code></td>
+                                <td><code>x || y</code></td>
+                                <td>Logical OR</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br> Example: Using Operators in C++ <br>
+                    <span class="span1"><br>#include <iostream>
+                   <br> using namespace std;
+                    
+                   <br>    int main() {
+                    <br>       int a = 10, b = 5;
+                        <br>       cout << "Sum: " << a + b << endl; 
+                        <br>       cout << "Difference: " << a - b << endl;
+                        <br>        cout << "Multiplication: " << a * b << endl;
+                        <br>         cout << "Division: " << a / b << endl;
+                        <br>         cout << "Modulus: " << a % b << endl;
+                        <br>         return 0;
+                        <br>          }
+                    
+                   </span>
+                </p>
+                <p id="subb4"><strong>2.4 Conditional Statements in C++</strong></p>
+                <p>
+                    <br> C++ provides if, else, and switch statements to control the flow of execution.
+                    <br> 1.if Statement
+                    <br>Executes a block of code if the condition is true.
+                    <span class="span1"><br>int age = 18;
+                      <br>  if (age >= 18) {
+                        <br>    cout << "You are an adult.";
+                       <br> }
+                        </span>
+                    <br> 2. if-else Statement
+                    <br>Executes one block if true, another if false.
+                    <span class="span1"><br>int num = 10;
+                <br> if (num % 2 == 0) {
+               <br>  cout << "Even number";
+              <br> } else {
+               <br>   cout << "Odd number";
+                    <br> }
+                        </span>
+                    <br> 3. switch Statement
+                    <br>Used when you have multiple conditions for a single variable.
+                    <span class="span1">
+                        char grade = 'B';
+                 <br> switch (grade) {
+                <br>   case 'A': cout << "Excellent"; break;
+                <br>   case 'B': cout << "Good"; break;
+                 <br>  case 'C': cout << "Fair"; break;
+                       <br>   default: cout << "Invalid Grade";
+                    <br>   }
+                   </span>
+                    <br>4. Loops in C++
+                    <br> Loops are used to execute a block of code multiple times.
+                    <br> 1. for Loop
+                    <br>Executes code a fixed number of times.
+                    <span class="span1"> 
+            <br>for (int i = 1; i <= 5; i++) {
+               <br>   cout << "Iteration: " << i << endl;
+        }
+       </span>
+                    <br> 2. while Loop
+                    <br>Executes code while a condition is true.
+                    <span class="span1"><br>int i = 1;
+                    <br> while (i <= 5) {
+                       <br> cout << "Iteration: " << i << endl;
+             <br> i++;
+            }
+                          </span>
+                    <br> 3. do-while Loop
+                    <br>Executes code at least once, then repeats while the condition is true.
+                    <span class="span1"><br>int i = 1;
+                       <br> do {
+                           <br> cout << "Iteration: " << i << endl;
+                           <br> i++;
+                       }<br> while (i <= 5);
+                        </span>
+                    <br> Arrays in C++
+                    <br> Arrays store multiple values of the same type.
+                    <span class="span1"><br>int numbers[3] = {10, 20, 30};
+                      <br>  cout << "First number: " << numbers[0];
+                        </span>
+                </p>
+            </section>
+            <div class="btnquiz">
+                <button onclick="window.location.href='./quiz.html'">Quiz</button>
+
+            </div>
+            <section id="chapter3">
+                <h2>3. Functions</h2>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/LdANP4iuQxQ?si=d4kwhkEgHnGkIYST" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p id="subbb1"><strong>3.1 Functions</strong></p>
+                <p>There are two types of functions in C++: stand-alone functions and member functions.<br> The main difference between them is that a member function belongs to a class, structure, or union, whereas a stand-alone function does not.
+                    <span class="span1"><br>#include <iostream>
+                   <br> using namespace std;
+                    
+                   <br> void greet(string name) {
+                     <br>   cout << "Hello, " << name << "!" << endl;
+                    }
+                    
+                  <br>  int main() {
+                      <br>  greet("Alice");
+                      <br>  return 0;
+                    }
+                    </span>
+
+
+                </p>
+
+                <p id="subbb2"><strong>3.2 Function Parameters</strong></p>
+                <p>You can pass parameters by value, reference, or pointer...
+                    <span class="span1">
+                   <br> #include <iostream>
+                       <br> using namespace std;
+                     <br> void greet(string name){
+                    <br>  cout<<"hello,"<< name <<"!"<< endl;
+                          <br>}
+                  <br>   int main(){
+                           <br>    greet("alice");
+                         <br>    return0;
+                               <br> }
+                </span>
+                </p>
+                <p id="subbb3"><strong>3.3 FUNCTION CALLS</strong></p>
+                <p> Sample program.
+                    <span class="span1">
+                        <br>      //  Calculating powers with
+                        <br>     //  the standard function pow()
+                        <br>    #include <iostream>    // Declaration of cout
+                            <br>    #include <cmath>       // Prototype of pow(), thus:
+                            <br>    // double pow( double, double);
+                        <br>   using namespace std;
+                        <br>      int main()
+                        <br>      {
+                            <br>      double x = 2.5, y;
+                       <br> // By means of a prototype, the compiler generates
+                       <br>    // the correct call or an error message!
+                       <br>    // Computes x raised to the power 3:
+                       <br>    y = pow("x", 3.0);   // Error! String is not a number
+                        <br>   y = pow(x + 3.0);    // Error! Just one argument
+                        <br>   y = pow(x, 3.0);     // ok!
+                        <br>     y = pow(x, 3);       // ok! The compiler converts the
+                        <br>    // int value 3 to double.
+                        <br>   cout << "2.5 raised to 3 yields:       "
+                        <br>   << y << endl;
+                        <br>    // Calculating with pow() is possible:
+                        <br>   cout << "2 + (5 raised to the power 2.5) yields: "
+                        <br>    <<  2.0 + pow(5.0, x) << endl;
+                        <br>   return 0;
+                        <br>    }
+                </span>
+                    <br> Screen output
+                    <br> 2.5 raised to the power 3 yields: 15.625
+                    <br> 2 + (5 raised to the power 2.5) yields: 57.9017
+                </p>
+
+                <p id="subbb4"><strong>3.4 Functions calls</strong></p>
+                <p> A function call is an expression of the same type as the function and whose value corre sponds to the return value.<br> The return value is commonly passed to a suitable variable
+                    <br> Example:<br> y = pow( x, 3.0); <br> In this example the function pow()is first called using the arguments x and 3.0, and the result, the power x3, is assigned to y. As the function call represents a value, other operations are
+                    also possible. Thus, the function pow() can be used to perform calculations for double values. <br> Example: <br> cout
+                    <<p 2.0 + pow( 5.0, x); <br> This expression first adds the number 2.0 to the return value of pow(5.0,x), then outputs the result using cout. Any expression can be passed to a function as an argument, such as a constant or an arithmetical expression. However,
+                        it is important that the types of the arguments corre spond to those expected by the function. The compiler refers to the prototype to check that the function has been called cor rectly. If the argument type does not match exactly
+                        to the type defined in the prototype, the compiler performs type conversion, if possible. </p>
+
+                <p id="subbb5"><strong>3.5 type for function</strong></p>
+                <p> sample program
+                    <span class="span1"> <br>// Outputs three random numbers
+        <br>  #include <iostream>  // Declaration of cin and cout
+            <br>   #include <cstdlib>   // Prototypes of srand(), rand():
+                <br>   // void srand( unsigned int seed );
+                <br>   // int rand( void );
+                <br>   using namespace std;
+        <br>   int main()
+        <br>   {
+            <br>   unsigned int seed;
+            <br>    int z1, z2, z3;
+            <br>    cout << "   --- Random Numbers  --- \n" << endl;
+            <br>    cout << "To initialize the random number generator, "
+            <br>    << "\n please enter an integer value: ";
+            <br>    cin  >> seed;      // Input an integer
+            <br>    srand( seed);      // and use it as argument for a
+            <br>     // new sequence of random numbers.
+        <br>    z1 = rand();       // Compute three random numbers.
+        <br>    z2 = rand();
+        <br>      z3 = rand();
+        <br>       cout << "\nThree random numbers: "
+        <br>       << z1 << "   " << z2 << "   " << z3 << endl;
+        <br>       return 0;
+        }</span>
+                    <br>note<br><br> The statement cin>> seed;reads an integer from the keyboard, because seed is of the unsignedinttype
+
+                    <br> Functions without Return Value <br> You can also write functions that perform a certain action but do not return a value to the function that called them. The type void is available for functions of this type, which are also referred
+                    to as procedures in other programming languages
+                </p>
+                <p id="subbb6"><strong>3.6Types of Functions in C++</strong></p>
+                <p><br>Function Without Parameters & Return<br> A function that doesn't take input or return anything.
+                    <span class="span1"><br>#include <iostream>
+                <br>  using namespace std;
+                
+                <br>  void greet() {  
+                    <br>      cout << "Hello, welcome to C++ functions!" << endl;
+                    <br>}
+                
+                    <br>  int main() {
+                        <br>      greet();  // Function call
+                        <br>      return 0;
+                        <br>    }
+                </span>
+                    <br> void greet() → void means no return value.
+                    <br>The function prints a message but does not return anything.
+                    <br>greet(); calls the function inside main()
+                </p>
+                <p id="subbb7"><strong>3.7 Function With Return Value (Returns Output)</strong></p>
+                <p><br>A function that takes input and returns a value.
+                    <span class="span1"><br>#include <iostream>
+                    <br>   using namespace std;
+                    
+                    <br>    int add(int a, int b) {  
+                        <br>       return a + b;  
+                        <br>     }
+                    
+                        <br>       int main() {
+                        <br>          int sum = add(5, 3);  
+                        <br>          cout << "Sum: " << sum << endl;  // Output: Sum: 8
+                        <br>            return 0;
+                        <br>         }
+                    
+                </span>
+                    <br> voint add(int a, int b) → Takes two int parameters.
+                    <br> return a + b; → Sends back the result.
+                    <br> int sum = add(5, 3); → Calls add(), stores the result in sum.
+                </p>
+                <p id="subbb8"><strong>3.8 Function With Default Parameters</strong></p>
+                <p><br>A function that uses default values if no argument is provided.
+                    <span class="span1"><br>#include <iostream>
+                    <br>  using namespace std;
+                    
+                    <br>      void displayInfo(string name = "Guest", int age = 18) {
+                        <br>         cout << "Name: " << name << ", Age: " << age << endl;
+                        <br>        }
+                    
+                        <br>       int main() {
+                            <br>          displayInfo();              // Output: Name: Guest, Age: 18
+                            <br>           displayInfo("Alice", 25);   // Output: Name: Alice, Age: 25
+                            <br>            return 0;
+                            <br>         }
+                    
+                </span>
+                    <br> If no values are given, "Guest" and 18 are used as defaults.
+                    <br> Otherwise, provided values override defaults.
+                </p>
+                <p id="subbb9"><strong>3.9  Function Overloading (Same Name, Different Parameters)</strong></p>
+                <p><br>C++ allows multiple functions with the same name but different parameter types or numbers.
+                    <span class="span1"><br>#include <iostream>
+                    <br>  using namespace std;
+                    
+                    <br>    void display(int num) {  
+                        <br>        cout << "Integer: " << num << endl;
+                        <br>    }
+                    
+                        <br>      void display(double num) {  
+                        <br>          cout << "Double: " << num << endl;
+                        <br>      }
+                    
+                        <br>       int main() {
+                        <br>           display(10);    // Calls the integer version
+                        <br>           display(5.5);   // Calls the double version
+                        <br>            return 0;
+                        <br>         }
+                    
+                </span>
+                    <br> Explanation
+                    <br> Two display() functions exist but accept different data types.
+                    <br> C++ automatically picks the correct one based on the argument type.
+                </p>
+
+                <p id="subbb10"><strong>3.9.1 Pass By Value vs By Reference</strong></p>
+                <p><br>A Bass By Value (Create acopy).
+                    <br> the function gets a copy of the argument . <br> changes don't affect the original
+                    <span class="span1"><br>#include <iostream>
+                    <br>  using namespace std;
+                    
+                    <br>    void changeValue(int x) {  
+                        <br>       x=100;  //only changes the local copy
+                        <br>    }
+                    
+                    
+                        <br>       int main() {
+                            <br>int num = 10;
+                        <br>          changeValue(num);    // Calls the integer version
+                        <br>          cout << "value: " << num << endl;  // Calls the double version
+                        <br>            return 0;
+                        <br>         }
+                    
+                </span>
+                    <br> Explanation
+                    <br> the function modifies a copy num , so the original remains unchanged.
+
+                </p>
+
+                <p id="subbb11"><strong>3.9.2 Pass By Value vs By Reference</strong></p>
+                <p><br>A Pass By reference (modifies original).
+                    <br> Uses & (reference operator) to modify the original value
+                    <span class="span1"><br>#include <iostream>
+                    <br>  using namespace std;
+                    
+                    <br>    void changeValue(int &x) {  
+                        <br>       x=100;  // changes the original value
+                        <br>    }
+                    
+                    
+                        <br>       int main() {
+                            <br>int num = 10;
+                        <br>          changeValue(num);    // Calls the integer version
+                        <br>          cout << "value: " << num << endl;  // Calls the double version
+                        <br>            return 0;
+                        <br>         }
+                    
+                </span>
+                    <br> Explanation
+                    <br> the & symbol makes X a reference,meaning changes affect the original variable.
+
+                </p>
+            </section>
+            <div class="btnquiz">
+                <button onclick="window.location.href='./quiz.html'">Quiz</button>
+
+            </div>
+        </main>
+        <script>
+            function togglemenu(menuid) {
+                let menu = document.getElementById(menuid);
+                if (menu.style.display === "none" || menu.style.display === "") {
+                    document.querySelectorAll('.sup').forEach(m => m.style.display = "none");
+                    menu.style.display = "block";
+                } else {
+                    menu.style.display = "none"
+                }
+            }
+        </script>
+        <script>
+            document.getElementById("togglesidebar").addEventListener("click", function() {
+                let sidebar = document.querySelector(".sidebar")
+                let content = document.querySelector(".content")
+                if (sidebar.classList.contains("closed")) {
+                    sidebar.classList.remove("closed");
+                    content.classList.remove("shifted");
+                } else {
+                    sidebar.classList.add("closed");
+                    content.classList.add("shifted");
+                }
+            })
+        </script>
+        <script src="./java.js"></script>
+        <script>
+            window.addEventListener("scroll", function() {
+                const navbar = document.getElementById("navbar");
+                if (window.scrollY > 100) {
+                    navbar.classList.add("navbar");
+                } else {
+                    navbar.classList.remove("navbar");
+                }
+            });
+        </script>
+
+</body>
+
+</html>

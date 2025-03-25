@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 5rem 11%;
+    & form {
+        width: 320px;
+        background-color: transparent;
+    }
+    & form h1 {
+        color: #307BE3;
+        text-transform: capitalize;
+        font-size: 40px;
+    }
+    & form .p1 {
+        font-size: 14px;
+        margin-bottom: 30px;
+    }
+    & form .input_ground {
+        width: 100%;
+        height: 45px;
+        margin-bottom: 15px;
+    }
+    & form .input_ground input {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+        background-color: #ffffff;
+        outline: none;
+        border: 1px solid white;
+        padding: 0 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 1px #307ae39a;
+    }
+    & form .input_ground input::placeholder {
+        font-size: 16px;
+    }
+    & form .regist a,
+    & form .p2 a {
+        text-decoration: none;
+        transition: .5s;
+    }
+    & form .regist a:hover,
+    & form .p2 a:hover {
+        text-decoration: underline;
+    }
+    & form button {
+        display: inline-block;
+        width: 60%;
+        padding: 9px 0;
+        text-transform: capitalize;
+        background-color: #307BE3;
+        border: 1px solid #307BE3;
+        cursor: pointer;
+        margin-top: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        filter: drop-shadow(0 0 2px #307BE3);
+        margin-bottom: 20px;
+        transition: .5s;
+    }
+    & form button:hover {
+        background-color: white;
+        color: #307BE3;
+    }
+    & form .p2 {
+        font-size: 16px;
+    }
+    & form .p2 a {
+        font-weight: bold;
+    }
+    & img {
+        width: clamp(300px, 100%, 550px);
+    }
+}
