@@ -1,4 +1,4 @@
-                                                <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar">
 
 <head>
@@ -55,7 +55,7 @@
 
 
     <div class="course-container">
-        <div class="row">
+         <div class="row">
             <!-- Right part -->
 
             <div class="col-md-8">
@@ -261,7 +261,24 @@
                     </table>
                 </div>
 
+
+                <!--جزء التقييمات-->                     
+                <div class="reviews-section">
+                  <h2>Please leave your rating </h2>
+                  <div class="review-form">
+                      <input type="text" id="name" placeholder="name" required>
+                      <textarea id="comment" placeholder="Write your comment here..." required></textarea>
+                      <input type="number" id="rating" min="1" max="5" placeholder="Evaluation (1-5)" required>
+                      <button class="review-button" onclick="addReview()">Add your comment</button>
+                  </div>
+              
+                  <div class="carousel" id="reviews"></div>
+              </div>
+                
+
             </div>
+        
+       
 
 
             <!-- left part -->
@@ -283,6 +300,7 @@
 
 
     <script>
+        /*show-more*/
         function toggleText() {
             var hiddenText = document.querySelector('.hidden-text');
             var showMore = document.querySelector('.show-more');
@@ -296,7 +314,7 @@
             }
         }
 
-        <!--naaaaav-->
+        /*navbar*/
         const menuIcon = document.querySelector(".menu-icon");
         const sidebar = document.querySelector(".navbar-menu");
         const closeBtn = document.querySelector(".close-btn");
@@ -308,7 +326,60 @@
         closeBtn.addEventListener("click", () => {
             sidebar.classList.remove("active");
         });
+
+        /* جزء التقييمات */
+
+document.addEventListener("DOMContentLoaded", loadReviews);
+
+function addReview() {
+    let name = document.getElementById("name").value.trim();
+    let comment = document.getElementById("comment").value.trim();
+    let rating = document.getElementById("rating").value;
+
+    if (name === "" || comment === "" || rating === "") {
+        alert("يرجى ملء جميع الحقول!");
+        return;
+    }
+
+    let stars = "★".repeat(rating) + "☆".repeat(5 - rating);
+
+    let review = {
+        name: name,
+        comment: comment,
+        rating: stars
+    };
+
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.push(review);
+    localStorage.setItem("reviews", JSON.stringify(reviews));
+
+    displayReview(review);
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+    document.getElementById("rating").value = "";
+}
+
+function displayReview(review) {
+    let reviewsContainer = document.getElementById("reviews");
+
+    let reviewCard = document.createElement("div");
+    reviewCard.classList.add("review-card");
+
+    reviewCard.innerHTML = `
+        <p>"${review.comment}"</p>
+        <span class="name">${review.name}</span>
+        <div class="rating">${review.rating}</div>
+    `;
+
+    reviewsContainer.prepend(reviewCard);
+}
+
+function loadReviews() {
+    let reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+    reviews.forEach(displayReview);
+}
+
     </script>
 </body>
 
-</html> **
+</html>
