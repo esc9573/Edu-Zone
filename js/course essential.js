@@ -1,11 +1,13 @@
-const header = document.getElementById("header");
-window.addEventListener("scroll",function(){
-    if(window.scrollY > 50){
-        header.classList.add("header");
-    }
-    else{
-        header.classList.remove("header");
-    }
+const close = document.getElementById("close");
+const menu = document.querySelector(".menu");
+const open = document.getElementById("open");
+
+open.addEventListener("click",function(){
+    menu.classList.add("active");
+})
+
+close.addEventListener("click",function(){
+    menu.classList.remove("active");
 })
 
 /*====================================================================*/
