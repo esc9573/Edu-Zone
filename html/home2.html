@@ -48,9 +48,9 @@
             <h1><span>Grow</span> Your</h1>
             <h2>experience with us</h2>
             <div class="search">
-                <input type="search" placeholder="Find Your Courses">
+                <input type="search" placeholder="Find Your Courses" id="searchInput">
                 <div class="search-icon">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button onclick="searchCourses(event)" class="searchbutt"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
         </div>
@@ -199,32 +199,33 @@
         <div class="item">
             <h3>EduZone</h3>
             <ol>
-                <a href="#">About Us</a>
-                <a href="#">Services</a>
-                <a href="#">Community</a>
-                <a href="#">Todo list</a>
+                <li><a href="./home2.html">Home</a></li>
+                <li><a href="./course essential.html">Courses</a></li>
+                <li><a href="./quiz 2.html">Quizzes</a></li>
+                <li><a href="./support.html">Support</a></li>
+                </ul>
             </ol>
         </div>
         <div class="item">
             <h3>Support</h3>
             <ol>
-                <a href="#">Help</a>
-                <a href="#">Tweet @us</a>
-                <a href="#">Chat bot</a>
-                <a href="#">Feedback</a>
+                <a href="./support.html">Help</a>
+                <a href="./support.html">Tweet @us</a>
+                <a href="./support.html">Chat bot</a>
+                <a href="./support.html">Feedback</a>
             </ol>
         </div>
         <div class="item">
             <ol>
                 <h3>Links</h3>
-                <a href="#">Courses</a>
+                <a href="./course essential.html">Courses</a>
                 <a href="./quiz 2.html">Quizzes</a>
-                <a href="#">Support</a>
+                <a href="./support.html">Support</a>
             </ol>
         </div>
         <div class="item">
             <h3>Contact us</h3>
-            <a href="#"><i class="fas fa-envelope"></i> support@mail.com</a>
+            <a href="./support.html"><i class="fas fa-envelope"></i> support@mail.com</a>
         </div>
     </footer>
 
@@ -258,29 +259,29 @@
         <div class="item">
             <h3 class="footer-btn">EduZone <i class="fa-solid fa-arrow-down"></i></h3>
             <ol>
-                <a href="#">About Us</a>
-                <a href="#">Services</a>
-                <a href="#">Community</a>
-                <a href="#">Todo list</a>
+
+                <a href="./support.html">Services</a>
+                <a href="./courses.html">Community</a>
+                <a href="./html/support.html">Todo list</a>
             </ol>
         </div>
 
         <div class="item">
             <h3 class="footer-btn">Support <i class="fa-solid fa-arrow-down"></i></h3>
             <ol>
-                <a href="#">Help</a>
-                <a href="#">Tweet @us</a>
-                <a href="#">Chat bot</a>
-                <a href="#">Feedback</a>
+                <a href="./support.html">Help</a>
+                <a href="./support.html">Tweet @us</a>
+                <a href="./support.html">Chat bot</a>
+                <a href="./support.html">Feedback</a>
             </ol>
         </div>
 
         <div class="item">
             <h3 class="footer-btn">Links <i class="fa-solid fa-arrow-down"></i></h3>
             <ol>
-                <a href="#">Courses</a>
-                <a href="#">Quizzes</a>
-                <a href="#">Support</a>
+                <a href="./course essential.html">Courses</a>
+                <a href="./quiz.html">Quizzes</a>
+                <a href="./support.html">Support</a>
             </ol>
         </div>
 
@@ -301,15 +302,18 @@
     <!-- Footer -->
     <script src="../js/footer.js"></script>
     <script>
-        window.addEventListener("scroll", function() {
-            const navbar = document.getElementById("navbar");
-            if (window.scrollY > 100) {
-                navbar.classList.add("navbar");
-            } else {
-                navbar.classList.remove("navbar");
+        function searchCourses(e) {
+            e.preventDefault();
+            const query = document.getElementById("searchInput").value.trim();
+            if (query) {
+                localStorage.setItem("searchQuery", query);
+                window.location.href = "./course essential.html";
             }
-        });
+        }
     </script>
+
+
+
 </body>
 
 </html>
