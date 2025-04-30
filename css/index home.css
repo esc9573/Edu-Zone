@@ -18,6 +18,82 @@ img {
 }
 
 
+/* Dashboard Popup Styles */
+
+
+/* تصميم الداشبورد البسيط */
+
+.dashboard-popup {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 250px;
+}
+
+.user-info {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.user-info img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.dashboard-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.action-btn {
+    background: #f5f7fa;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.action-btn:hover {
+    background: #e1e5eb;
+}
+
+.action-btn i {
+    margin-left: 8px;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 8px;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 5px;
+    color: #dc3545;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout-btn:hover {
+    background: #ffecec;
+}
+
+.logout-btn i {
+    margin-left: 8px;
+}
+
+
 /* Navbar */
 
 nav {
@@ -1201,3 +1277,6 @@ footer a:hover {
         margin-bottom: 40px;
     }
 }
+
+
+/*test*/
