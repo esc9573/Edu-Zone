@@ -21,10 +21,36 @@
             <a href="../html/quiz.html" class="nav-btn3">Quizzes</a>
             <a href="./support.html" class="nav-btn4">Support</a>
         </div>
-        <div class="nav-login">
-            <i class="fa-solid fa-user"></i>
-        </div>
 
+        <div class="nav-login">
+
+            <i class="fa-solid fa-user" id="userIcon" style="cursor: pointer;"></i>
+
+
+            <div class="dashboard-popup" id="dashboardPopup" style="display: none;">
+                <div class="user-info">
+                    <h3 id="dash-avatar" width="80" style="border-radius: 50%;"></h3>
+                    <h3 id="dash-username">Loading..</h3>
+                    <p id="dash-email">user@example.com</p>
+                </div>
+
+                <div class="dashboard-actions">
+                    <button onclick="editField('fullname')" class="action-btn">
+                <i class="fas fa-user-edit"></i> Name change
+            </button>
+                    <button onclick="editField('email')" class="action-btn">
+                <i class="fas fa-envelope"></i> Mail change
+            </button>
+                    <button onclick="editField('password')" class="action-btn">
+                <i class="fas fa-lock"></i> Change password
+            </button>
+                </div>
+
+                <button id="logoutBtn" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> تسجيل الخروج
+        </button>
+            </div>
+        </div>
         <!-- Navbar Menu For Madia Query 990px -->
         <i class="fa-solid fa-bars menu-icon"></i>
         <div class="navbar-menu">
@@ -301,17 +327,86 @@
     <script src="../js/navbar-menu.js"></script>
     <!-- Footer -->
     <script src="../js/footer.js"></script>
-    <script>
-        function searchCourses(e) {
-            e.preventDefault();
-            const query = document.getElementById("searchInput").value.trim();
-            if (query) {
-                localStorage.setItem("searchQuery", query);
-                window.location.href = "./course essential.html";
-            }
-        }
-    </script>
 
+
+    <!-------------------------->
+    <!-------------------------->
+    <!-------------------------->
+    <!-------------------------->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const $ = id => document.getElementById(id);
+            const show = el => el.style.display = 'block';
+            const hide = el => el.style.display = 'none';
+            const toggle = el => el.style.display = el.style.display === 'block' ? 'none' : 'block';
+
+            const userIcon = $('userIcon'),
+                dash = $('dashboardPopup'),
+                logout = $('logoutBtn');
+
+            if (!userIcon || !dash) return;
+
+            userIcon.onclick = e => {
+                e.stopPropagation();
+                toggle(dash) === 'block' && fetchUser();
+            };
+            document.onclick = () => hide(dash);
+            dash.onclick = e => e.stopPropagation();
+
+            if (logout) {
+                logout.addEventListener('click', () => {
+                    if (confirm('Are you sure you want to log out?')) {
+                        location.href = '../PHP/logout.php';
+                    }
+                });
+            }
+
+
+            const fetchUser = async() => {
+                try {
+                    const r = await fetch('../PHP/dashport.php');
+                    const d = await r.json();
+                    setUser(d.success ? d.user : {});
+                } catch {
+                    setUser();
+                }
+            };
+
+            const setUser = (u = {}) => {
+                $('dash-username').textContent = u.fullname || 'User';
+                $('dash-email').textContent = u.email || 'Unknown email';
+                $('dash-avatar').src = u.profile_pic ? `../${u.profile_pic}` : '../img/default-avatar.png';
+            };
+
+            window.editField = f => {
+                const current = f === 'password' ? '' : $(f === 'fullname' ? 'dash-username' : 'dash-email').textContent;
+                const val = prompt(`Enter new ${f}:`, current);
+                if (val && val !== current) updateProfile(f, val);
+            };
+
+            const updateProfile = async(f, v) => {
+                try {
+                    const r = await fetch('../PHP/Uptade.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            field: f,
+                            value: v
+                        })
+                    });
+                    const d = await r.json();
+                    alert(d.success ? 'Updated successfully!' : 'Update failed: ' + d.message);
+                    if (d.success && f !== 'password') {
+                        $(f === 'fullname' ? 'dash-username' : 'dash-email').textContent = v;
+                    }
+                } catch {
+                    alert('Error updating.');
+                }
+            };
+        });
+    </script>
 
 
 </body>
