@@ -12,6 +12,11 @@
             padding: 20px;
         }
         
+        .quiz-section {
+            display: none;
+            margin-bottom: 30px;
+        }
+        
         .question {
             background-color: #fff;
             padding: 15px;
@@ -37,6 +42,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            margin-right: 10px;
         }
         
         button:hover {
@@ -52,6 +58,21 @@
             color: red;
             margin-top: 10px;
         }
+        
+        .section-title {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        
+        .navigation-buttons {
+            margin-top: 20px;
+        }
+        
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -59,226 +80,251 @@
 
     <h1>MCQ Quiz - C++</h1>
 
+    <!-- Section 1 (Questions 1-7) -->
+    <div class="quiz-section" id="section1">
+        <h2 class="section-title">Basic Concepts (Questions 1-7)</h2>
 
-
-    <!-- Question 1 -->
-    <div class="question">
-        <p>1. What is C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q1" value="a"> A scripting language</label>
-            <label><input type="radio" name="q1" value="b"> An object-oriented programming language</label>
-            <label><input type="radio" name="q1" value="c"> A markup language</label>
+        <!-- Question 1 -->
+        <div class="question">
+            <p>1. What is C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="a"> A scripting language</label>
+                <label><input type="radio" name="q1" value="b"> An object-oriented programming language</label>
+                <label><input type="radio" name="q1" value="c"> A markup language</label>
+            </div>
         </div>
-    </div>
-    <!-- Correct Answer: b -->
 
-    <!-- Question 2 -->
-    <div class="question">
-        <p>2. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+        <!-- Question 2 -->
+        <div class="question">
+            <p>2. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
     cout << "Hello, World!";
     return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q2" value="a"> Hello</label>
-            <label><input type="radio" name="q2" value="b"> World!</label>
-            <label><input type="radio" name="q2" value="c"> Hello, World!</label>
-        </div>
-    </div>
-    <!-- Correct Answer: c -->
+            <div class="options">
+                <label><input type="radio" name="q2" value="a"> Hello</label>
+                <label><input type="radio" name="q2" value="b"> World!</label>
+                <label><input type="radio" name="q2" value="c"> Hello, World!</label>
+            </div>
+            <div class="question">
+                <p>3. Which keyword is used to define a variable in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> var</label>
+                    <label><input type="radio" name="q3" value="b"> int</label>
+                    <label><input type="radio" name="q3" value="c"> variable</label>
+                </div>
+            </div>
+            <!-- Correct Answer: b -->
 
-    <!-- Question 3 -->
-    <div class="question">
-        <p>3. Which keyword is used to define a variable in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q3" value="a"> var</label>
-            <label><input type="radio" name="q3" value="b"> int</label>
-            <label><input type="radio" name="q3" value="c"> variable</label>
-        </div>
-    </div>
-    <!-- Correct Answer: b -->
+            <!-- Question 4 -->
+            <div class="question">
+                <p>4. What is the correct syntax to include the iostream library in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> #include &lt;iostream&gt;</label>
+                    <label><input type="radio" name="q4" value="b"> #include iostream</label>
+                    <label><input type="radio" name="q4" value="c"> #include "iostream"</label>
+                </div>
+            </div>
+            <!-- Correct Answer: a -->
 
-    <!-- Question 4 -->
-    <div class="question">
-        <p>4. What is the correct syntax to include the iostream library in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q4" value="a"> #include &lt;iostream&gt;</label>
-            <label><input type="radio" name="q4" value="b"> #include iostream</label>
-            <label><input type="radio" name="q4" value="c"> #include "iostream"</label>
-        </div>
-    </div>
-    <!-- Correct Answer: a -->
+            <!-- Question 5 -->
+            <div class="question">
+                <p>5. What is the output of the following code?</p>
+                <pre>#include &lt;iostream&gt;
+        using namespace std;
+        int main() {
+            int x = 5;
+            cout << x++;
+            return 0;
+        }</pre>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> 5</label>
+                    <label><input type="radio" name="q5" value="b"> 6</label>
+                    <label><input type="radio" name="q5" value="c"> 4</label>
+                </div>
+            </div>
+            <!-- Correct Answer: a -->
 
-    <!-- Question 5 -->
-    <div class="question">
-        <p>5. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+            <!-- Question 6 -->
+            <div class="question">
+                <p>6. Which of the following is used to create a single-line comment in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="a"> //</label>
+                    <label><input type="radio" name="q6" value="b"> /* */</label>
+                    <label><input type="radio" name="q6" value="c"> #</label>
+                </div>
+            </div>
+
+
+            <!-- Question 7 -->
+            <div class="question">
+                <p>7. What is the correct way to declare a function in C++?</p>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="a"> function myFunction() {}</label>
+                    <label><input type="radio" name="q7" value="b"> void myFunction() {}</label>
+                    <label><input type="radio" name="q7" value="c"> def myFunction() {}</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Questions 3-7 -->
+        <!-- (Include questions 3-7 from your original code here) -->
+
+        <div class="navigation-buttons">
+            <button onclick="checkSection(1)">Check Answers</button>
+            <button onclick="window.location.href='./course content.html'">Continue to Next Page</button>
+        </div>
+
+        <div class="result" id="result1"></div>
+        <div class="incorrect" id="incorrect1"></div>
+    </div>
+
+    <!-- Section 2 (Questions 8-14) -->
+    <div class="quiz-section" id="section2">
+        <div class="question">
+            <p>8. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
+             using namespace std;
+          int main() {
+              int x = 10;
+           if (x > 5) {
+               cout << "Yes";
+                   } else {
+               cout << "No";
+                  }
+           return 0;
+                  }</pre>
+            <div class="options">
+                <label><input type="radio" name="q8" value="a"> Yes</label>
+                <label><input type="radio" name="q8" value="b"> No</label>
+                <label><input type="radio" name="q8" value="c"> Error</label>
+            </div>
+        </div>
+
+
+        <!-- Question 9 -->
+        <div class="question">
+            <p>9. Which of the following is used to create a loop in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q9" value="a"> for</label>
+                <label><input type="radio" name="q9" value="b"> loop</label>
+                <label><input type="radio" name="q9" value="c"> repeat</label>
+            </div>
+        </div>
+
+
+        <!-- Question 10 -->
+        <div class="question">
+            <p>10. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
+         using namespace std;
+          int main() {
+          int x = 0;
+          while (x < 3) {
+              cout << x;
+            x++;
+        }
+         return 0;
+          }</pre>
+            <div class="options">
+                <label><input type="radio" name="q10" value="a"> 012</label>
+                <label><input type="radio" name="q10" value="b"> 123</label>
+                <label><input type="radio" name="q10" value="c"> 0123</label>
+            </div>
+
+        </div>
+        <!-- Question 11 -->
+        <div class="question">
+            <p>11. Which of the following is used to create an array in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q11" value="a"> array</label>
+                <label><input type="radio" name="q11" value="b"> []</label>
+                <label><input type="radio" name="q11" value="c"> list</label>
+            </div>
+        </div>
+
+
+        <!-- Question 12 -->
+        <div class="question">
+            <p>12. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
-    int x = 5;
-    cout << x++;
-    return 0;
+int arr[3] = {1, 2, 3};
+cout << arr[1];
+return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q5" value="a"> 5</label>
-            <label><input type="radio" name="q5" value="b"> 6</label>
-            <label><input type="radio" name="q5" value="c"> 4</label>
+            <div class="options">
+                <label><input type="radio" name="q12" value="a"> 1</label>
+                <label><input type="radio" name="q12" value="b"> 2</label>
+                <label><input type="radio" name="q12" value="c"> 3</label>
+            </div>
         </div>
-    </div>
-    <!-- Correct Answer: a -->
 
-    <!-- Question 6 -->
-    <div class="question">
-        <p>6. Which of the following is used to create a single-line comment in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q6" value="a"> //</label>
-            <label><input type="radio" name="q6" value="b"> /* */</label>
-            <label><input type="radio" name="q6" value="c"> #</label>
+
+        <!-- Question 13 -->
+        <div class="question">
+            <p>13. Which of the following is used to create a pointer in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q13" value="a"> *</label>
+                <label><input type="radio" name="q13" value="b"> &</label>
+                <label><input type="radio" name="q13" value="c"> ptr</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 7 -->
-    <div class="question">
-        <p>7. What is the correct way to declare a function in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q7" value="a"> function myFunction() {}</label>
-            <label><input type="radio" name="q7" value="b"> void myFunction() {}</label>
-            <label><input type="radio" name="q7" value="c"> def myFunction() {}</label>
-        </div>
-    </div>
-
-
-    <!-- Question 8 -->
-    <div class="question">
-        <p>8. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+        <!-- Question 14 -->
+        <div class="question">
+            <p>14. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
-    int x = 10;
-    if (x > 5) {
-        cout << "Yes";
-    } else {
-        cout << "No";
-    }
-    return 0;
+int x = 5;
+int *ptr = &x;
+cout << *ptr;
+return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q8" value="a"> Yes</label>
-            <label><input type="radio" name="q8" value="b"> No</label>
-            <label><input type="radio" name="q8" value="c"> Error</label>
+            <div class="options">
+                <label><input type="radio" name="q14" value="a"> 5</label>
+                <label><input type="radio" name="q14" value="b"> Address of x</label>
+                <label><input type="radio" name="q14" value="c"> Error</label>
+            </div>
         </div>
+
+        <!-- Questions 8-14 -->
+        <!-- (Include questions 8-14 from your original code here) -->
+
+        <div class="navigation-buttons">
+            <button onclick="showSection(1)">Previous Section</button>
+            <button onclick="checkSection(2)">Check Answers</button>
+            <button onclick="window.location.href='./course content.html'">Continue to Next Page</button>
+        </div>
+
+        <div class="result" id="result2"></div>
+        <div class="incorrect" id="incorrect2"></div>
     </div>
 
+    <!-- Section 3 (Questions 15-20) -->
+    <div class="quiz-section" id="section3">
+        <h2 class="section-title">Advanced Concepts (Questions 15-20)</h2>
 
-    <!-- Question 9 -->
-    <div class="question">
-        <p>9. Which of the following is used to create a loop in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q9" value="a"> for</label>
-            <label><input type="radio" name="q9" value="b"> loop</label>
-            <label><input type="radio" name="q9" value="c"> repeat</label>
+        <!-- Question 15 -->
+        <div class="question">
+            <p>15. Which of the following is used to create a reference in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q15" value="a"> &</label>
+                <label><input type="radio" name="q15" value="b"> *</label>
+                <label><input type="radio" name="q15" value="c"> ref</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 10 -->
-    <div class="question">
-        <p>10. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
-using namespace std;
-int main() {
-    int x = 0;
-    while (x < 3) {
-        cout << x;
-        x++;
-    }
-    return 0;
-}</pre>
-        <div class="options">
-            <label><input type="radio" name="q10" value="a"> 012</label>
-            <label><input type="radio" name="q10" value="b"> 123</label>
-            <label><input type="radio" name="q10" value="c"> 0123</label>
-        </div>
-    </div>
-
-
-    <!-- Question 11 -->
-    <div class="question">
-        <p>11. Which of the following is used to create an array in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q11" value="a"> array</label>
-            <label><input type="radio" name="q11" value="b"> []</label>
-            <label><input type="radio" name="q11" value="c"> list</label>
-        </div>
-    </div>
-
-
-    <!-- Question 12 -->
-    <div class="question">
-        <p>12. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
-using namespace std;
-int main() {
-    int arr[3] = {1, 2, 3};
-    cout << arr[1];
-    return 0;
-}</pre>
-        <div class="options">
-            <label><input type="radio" name="q12" value="a"> 1</label>
-            <label><input type="radio" name="q12" value="b"> 2</label>
-            <label><input type="radio" name="q12" value="c"> 3</label>
-        </div>
-    </div>
-
-
-    <!-- Question 13 -->
-    <div class="question">
-        <p>13. Which of the following is used to create a pointer in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q13" value="a"> *</label>
-            <label><input type="radio" name="q13" value="b"> &</label>
-            <label><input type="radio" name="q13" value="c"> ptr</label>
-        </div>
-    </div>
-
-
-    <!-- Question 14 -->
-    <div class="question">
-        <p>14. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
-using namespace std;
-int main() {
-    int x = 5;
-    int *ptr = &x;
-    cout << *ptr;
-    return 0;
-}</pre>
-        <div class="options">
-            <label><input type="radio" name="q14" value="a"> 5</label>
-            <label><input type="radio" name="q14" value="b"> Address of x</label>
-            <label><input type="radio" name="q14" value="c"> Error</label>
-        </div>
-    </div>
-
-
-    <!-- Question 15 -->
-    <div class="question">
-        <p>15. Which of the following is used to create a reference in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q15" value="a"> &</label>
-            <label><input type="radio" name="q15" value="b"> *</label>
-            <label><input type="radio" name="q15" value="c"> ref</label>
-        </div>
-    </div>
-
-
-    <!-- Question 16 -->
-    <div class="question">
-        <p>16. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+        <!-- Question 16 -->
+        <div class="question">
+            <p>16. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
     int x = 10;
@@ -287,29 +333,29 @@ int main() {
     cout << x;
     return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q16" value="a"> 10</label>
-            <label><input type="radio" name="q16" value="b"> 20</label>
-            <label><input type="radio" name="q16" value="c"> Error</label>
+            <div class="options">
+                <label><input type="radio" name="q16" value="a"> 10</label>
+                <label><input type="radio" name="q16" value="b"> 20</label>
+                <label><input type="radio" name="q16" value="c"> Error</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 17 -->
-    <div class="question">
-        <p>17. Which of the following is used to create a class in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q17" value="a"> class</label>
-            <label><input type="radio" name="q17" value="b"> struct</label>
-            <label><input type="radio" name="q17" value="c"> object</label>
+        <!-- Question 17 -->
+        <div class="question">
+            <p>17. Which of the following is used to create a class in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q17" value="a"> class</label>
+                <label><input type="radio" name="q17" value="b"> struct</label>
+                <label><input type="radio" name="q17" value="c"> object</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 18 -->
-    <div class="question">
-        <p>18. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+        <!-- Question 18 -->
+        <div class="question">
+            <p>18. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
     int x = 10;
@@ -317,29 +363,29 @@ int main() {
     cout << (x > y ? x : y);
     return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q18" value="a"> 10</label>
-            <label><input type="radio" name="q18" value="b"> 20</label>
-            <label><input type="radio" name="q18" value="c"> Error</label>
+            <div class="options">
+                <label><input type="radio" name="q18" value="a"> 10</label>
+                <label><input type="radio" name="q18" value="b"> 20</label>
+                <label><input type="radio" name="q18" value="c"> Error</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 19 -->
-    <div class="question">
-        <p>19. Which of the following is used to create an object in C++?</p>
-        <div class="options">
-            <label><input type="radio" name="q19" value="a"> new</label>
-            <label><input type="radio" name="q19" value="b"> object</label>
-            <label><input type="radio" name="q19" value="c"> create</label>
+        <!-- Question 19 -->
+        <div class="question">
+            <p>19. Which of the following is used to create an object in C++?</p>
+            <div class="options">
+                <label><input type="radio" name="q19" value="a"> new</label>
+                <label><input type="radio" name="q19" value="b"> object</label>
+                <label><input type="radio" name="q19" value="c"> create</label>
+            </div>
         </div>
-    </div>
 
 
-    <!-- Question 20 -->
-    <div class="question">
-        <p>20. What is the output of the following code?</p>
-        <pre>#include &lt;iostream&gt;
+        <!-- Question 20 -->
+        <div class="question">
+            <p>20. What is the output of the following code?</p>
+            <pre>#include &lt;iostream&gt;
 using namespace std;
 int main() {
     int x = 5;
@@ -347,30 +393,33 @@ int main() {
     cout << x / y;
     return 0;
 }</pre>
-        <div class="options">
-            <label><input type="radio" name="q20" value="a"> 2</label>
-            <label><input type="radio" name="q20" value="b"> 2.5</label>
-            <label><input type="radio" name="q20" value="c"> Error</label>
+            <div class="options">
+                <label><input type="radio" name="q20" value="a"> 2</label>
+                <label><input type="radio" name="q20" value="b"> 2.5</label>
+                <label><input type="radio" name="q20" value="c"> Error</label>
+            </div>
         </div>
+        <!-- Questions 15-20 -->
+        <!-- (Include questions 15-20 from your original code here) -->
+
+        <div class="navigation-buttons">
+            <button onclick="showSection(2)">Previous Section</button>
+            <button onclick="checkSection(3)">Check Answers</button>
+            <button onclick="window.location.href='./course content.html'">Continue to Next Page</button>
+        </div>
+
+        <div class="result" id="result3"></div>
+        <div class="incorrect" id="incorrect3"></div>
     </div>
 
 
-
-
-
-
-
-    <button onclick="checkAnswers(),window.location.href='./course content.html'">Submit Answers</button>
-    <button onclick="window.location.href='./course content.html'">Continue</button>
-    <div class="result" id="result"></div>
-    <div class="incorrect" id="incorrect"></div>
-
     <script>
+        // الإجابات الصحيحة
         const correctAnswers = {
             q1: "b",
             q2: "c",
-            q3: "a",
-            q4: "b",
+            q3: "b",
+            q4: "a",
             q5: "a",
             q6: "a",
             q7: "b",
@@ -384,38 +433,98 @@ int main() {
             q15: "a",
             q16: "b",
             q17: "a",
-            q18: "a",
+            q18: "b",
             q19: "a",
-            q20: "a",
-
+            q20: "a"
         };
 
-        function checkAnswers() {
+        // نطاقات الأسئلة لكل قسم
+        const sectionRanges = {
+            1: {
+                start: 1,
+                end: 7
+            },
+            2: {
+                start: 8,
+                end: 14
+            },
+            3: {
+                start: 15,
+                end: 20
+            }
+        };
+
+        // عرض قسم معين
+        function showSection(sectionNumber) {
+            // إخفاء جميع الأقسام
+            document.querySelectorAll('.quiz-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            // عرض القسم المطلوب
+            document.getElementById(`section${sectionNumber}`).style.display = 'block';
+
+            // تحديث مؤشر القسم
+            const sectionTitles = {
+                1: "المفاهيم الأساسية",
+                2: "هياكل التحكم والمصفوفات",
+                3: "المفاهيم المتقدمة"
+            };
+            document.getElementById('sectionIndicator').textContent = sectionTitles[sectionNumber];
+
+            // التمرير إلى أعلى الصفحة
+            window.scrollTo(0, 0);
+        }
+
+        // التنقل بين الأقسام
+        function navigateToSection(newSection) {
+            // التأكد من أن رقم القسم ضمن الحدود المسموحة
+            if (newSection < 1) newSection = 1;
+            if (newSection > 3) newSection = 3;
+
+            // عرض القسم الجديد
+            showSection(newSection);
+        }
+
+        // التحقق من إجابات قسم معين
+        function checkSection(sectionNumber) {
+            const range = sectionRanges[sectionNumber];
             let score = 0;
             let incorrectAnswers = [];
+            let totalQuestions = range.end - range.start + 1;
 
-            for (let i = 1; i <= 20; i++) {
+            for (let i = range.start; i <= range.end; i++) {
                 const selected = document.querySelector(`input[name="q${i}"]:checked`);
                 if (selected) {
                     if (selected.value === correctAnswers[`q${i}`]) {
                         score++;
                     } else {
-                        incorrectAnswers.push(`Question ${i}: Your answer was ${selected.value}, correct answer is ${correctAnswers[`q${i}`]}`);
+                        incorrectAnswers.push(`السؤال ${i}: إجابتك كانت ${selected.value}، الإجابة الصحيحة هي ${correctAnswers[`q${i}`]}`);
                     }
                 } else {
-                    incorrectAnswers.push(`Question ${i}: You did not select an answer.`);
+                    incorrectAnswers.push(`السؤال ${i}: لم تقم باختيار إجابة`);
                 }
             }
 
-            
-            document.getElementById("result").innerText = `Your score is ${score}/20`;
+            // عرض النتائج
+            document.getElementById(`result${sectionNumber}`).innerText = `درجتك: ${score}/${totalQuestions}`;
 
             if (incorrectAnswers.length > 0) {
-                document.getElementById("incorrect").innerHTML = "<strong>Incorrect Answers:</strong><br>" + incorrectAnswers.join("<br>");
+                document.getElementById(`incorrect${sectionNumber}`).innerHTML = 
+                    "<strong>الأخطاء:</strong><br>" + incorrectAnswers.join("<br>");
             } else {
-                document.getElementById("incorrect").innerText = "";
+                document.getElementById(`incorrect${sectionNumber}`).innerText = "";
             }
         }
+
+        // عند تحميل الصفحة، قراءة معلمة القسم من URL
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const sectionParam = urlParams.get('section');
+            const defaultSection = sectionParam ? parseInt(sectionParam) : 1;
+            
+            showSection(defaultSection);
+        };
     </script>
 </body>
 
