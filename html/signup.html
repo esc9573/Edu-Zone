@@ -10,41 +10,44 @@
 </head>
 
 <body>
+    <form action="../PHP/Proses_signup.php" method="POST">
+        <div class="signup">
+            <div class="left">
+                <h1>Sign Up</h1>
+                <p>Let's Start wonderful journey with learn content</p>
 
-    <div class="signup">
-        <div class="left">
-            <h1>Sign Up</h1>
-            <p>Let's Start wonderful journey with learn content</p>
-            <input type="text" placeholder="Full name" required>
-            <input type="email" placeholder="Email" required>
-            <div class="password">
-                <input type="password" id="password" required placeholder="Password">
-                <i class="icon-password fa-solid fa-eye" onclick="togglePassword()"></i>
+                <input type="text" name="name" placeholder="Full name" required>
+                <input type="email" name="email" placeholder="Email" required>
+
+                <div class="password">
+                    <input type="password" id="password" name="pass" required placeholder="Password">
+                </div>
+
+                <div class="password">
+                    <input type="password" id="password2" name="confirm_password" required placeholder="Confirm Password">
+                </div>
+
+                <div class="chek">
+                    <p><i class="fa-solid fa-circle-check"></i> Least 8 characters</p>
+                    <p><i class="fa-solid fa-circle-check"></i> Least a number (0-9) or a symbol</p>
+                    <p><i class="fa-solid fa-circle-check"></i> Lowercase (a-z) and uppercase (A-Z)</p>
+                </div>
+
+                <!-- الزرار المعدل بنفس الستايل -->
+                <div class="google">
+                    <input type="submit" value="Sign Up" style="width: 50%; padding: 10px 0; border: 2px solid #1C81B9; background-color: #1C81B9; color: #fff; transition:all 0.3s ease; cursor: pointer; border-radius: 10px; font-size: 16px; margin-bottom: 0;">
+                    <h5>Or</h5>
+                    <a href="#"><i class="fa-brands fa-google"></i></a>
+                </div>
+
+                <h4>Already have an account? <a href="./Login.html">Login</a></h4>
             </div>
-            <div class="password">
-                <input type="password" id="password2" required placeholder="Confirm Password">
-                <i class="icon-password fa-solid fa-eye" onclick="togglePassword()"></i>
+            <div class="right">
+                <img src="../img/signup.png" style="transform: scaleX(-1);">
             </div>
-            <div class="chek">
-                <p><i class="fa-solid fa-circle-check"></i> Least 8 characters</p>
-                <p><i class="fa-solid fa-circle-check"></i> Least a number (0-9) or a symbol</p>
-                <p><i class="fa-solid fa-circle-check"></i> Lowercase (a-z) and uppercase (A-Z)</p>
-            </div>
-            <div class="google">
-                <input type="submit" value="Login" onclick="window.location.href='./Login.html'" href="./Login.html">
-                <h5>Or</h5>
-                <a href="#"><i class="fa-brands fa-google"></i></a>
-            </div>
-            <h4> i not have an account?<a href="./Login.html">Login</a></h4>
         </div>
-        <div class="right">
-            <img src="../img/signup.png  " style="transform: scaleX(-1);">
-        </div>
-    </div>
+    </form>
 
-
-
-    <script src="../js/signup.js"></script>
 </body>
 
 </html>
