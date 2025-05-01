@@ -1,44 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-*{
+* {
     padding: 0;
     margin: 0;
-    font-family:'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     box-sizing: border-box;
 }
 
-a{
+a {
     color: #000;
     transition: all 0.3s ease;
 }
 
-img{
+img {
     object-fit: cover;
 }
 
-body{
-    background-color:#f1f1f1;
+body {
+    background-color: #f1f1f1;
 }
 
-.signup{
+.signup {
     display: flex;
     align-items: center;
     justify-content: space-around;
     height: 100vh;
 }
+
+
 /* Left */
-.signup .left h1{
+
+.signup .left h1 {
     font-size: 60px;
     color: #1C81B9;
 }
 
-.signup .left p{
+.signup .left p {
     font-size: 14px;
     margin-bottom: 40px;
 }
 
-.signup .left input{
+.signup .left input {
     width: 70%;
     padding: 15px;
     margin-bottom: 20px;
@@ -50,77 +52,68 @@ body{
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
-.signup .password{
+.signup .password {
     position: relative;
 }
 
-.signup .password #password{
+.signup .password #password {
     padding-right: 40px;
 }
 
-.signup .password .icon-password{
-    position: absolute;
-    top: 15px;
-    cursor: pointer;
-    font-size: 22px;
-    color: #555;
-    left: 290px;
-}
-
-.signup .chek p{
+.signup .chek p {
     margin-bottom: 7px;
     opacity: 0.8;
 }
 
-.signup .chek p i{
+.signup .chek p i {
     margin-right: 7px;
 }
 
-.signup .left .google{
+.signup .left .google {
     margin: 20px 0;
     display: flex;
     align-items: center;
 }
 
-.signup .left .google input{
+.signup .left .google input {
     width: 50%;
     padding: 10px 0;
     border: 2px solid #1C81B9;
     background-color: #1C81B9;
     color: #fff;
-    transition:all 0.3s ease;
+    transition: all 0.3s ease;
     cursor: pointer;
     border-radius: 10px;
     font-size: 16px;
     margin-bottom: 0;
 }
 
-.signup .left .google input:hover{
+.signup .left .google input:hover {
     background-color: transparent;
     color: #000;
 }
 
-.signup .left .google h5{
-   margin: 0 10px;
-   font-size: 15px;
+.signup .left .google h5 {
+    margin: 0 10px;
+    font-size: 15px;
 }
 
-.signup .left .google a{
+.signup .left .google a {
     border: 1px solid #b0b0b0;
     padding: 10px 15px;
     font-size: 20px;
     border-radius: 5px;
 }
 
-.signup  a:hover{
+.signup a:hover {
     color: #1C81B9;
 }
 
-.signup h4{
+.signup h4 {
     font-size: 17px;
 }
 
-.signup h4 a{
+.signup h4 a {
     margin-left: 8px;
 }
 
@@ -128,62 +121,32 @@ body{
     width: 50%;
 }
 
-.signup .right img{
+.signup .right img {
     width: 100%;
 }
 
-
-@media screen and (max-width: 1200px){
-    .signup .left h1{
-       font-size: 50px;
+@media screen and (max-width: 1200px) {
+    .signup .left h1 {
+        font-size: 50px;
     }
-    .signup .left p{
-       font-size: 13px;
+    .signup .left p {
+        font-size: 13px;
     }
-   
 }
 
-@media screen and (max-width: 990px){
-    .signup .left{
-       width: 80%;
-       text-align: center;
-       margin-left: 0px;
+@media screen and (max-width: 990px) {
+    .signup .left {
+        width: 100%;
+        text-align: center;
     }
     .signup .right,
-    .signup .left .chek{
-       display: none;
+    .signup .left .chek {
+        display: none;
     }
-    .signup .left .google{
-       justify-content: center;
+    .signup .left .google {
+        justify-content: center;
     }
-    .signup .password .icon-password{
-        position: absolute;
-        top: 15px;
-        right: 0;
-        left: 400px;
-    }
-}
-
-@media screen and (max-width: 760px){
-    .signup .password .icon-password{
-        left: 350px;
-    }
-}
-
-@media screen and (max-width: 648px){
-    .signup .password .icon-password{
-        left: 300px;
-    }
-}
-
-@media screen and (max-width: 570px){
-    .signup .password .icon-password{
-        left: 250px;
-    }
-}
-
-@media screen and (max-width: 490px){
-    .signup .password .icon-password{
-        left: 200px;
+    .signup .left input {
+        width: 80%;
     }
 }
